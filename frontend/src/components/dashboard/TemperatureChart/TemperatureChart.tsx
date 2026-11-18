@@ -37,6 +37,7 @@ interface ChartRow {
 }
 
 const Y_PADDING_C = 2;
+const Y_TICK_STEP_C = 5;
 
 export function TemperatureChart({
   series,
@@ -72,7 +73,11 @@ export function TemperatureChart({
       .filter((v): v is number => v !== null);
     const min = Math.min(series.equipment.safe_min_c, ...values);
     const max = Math.max(series.equipment.safe_max_c, ...values);
-    return [Math.floor(min - Y_PADDING_C), Math.ceil(max + Y_PADDING_C)];
+    const step = Y_TICK_STEP_C;
+    return [
+      Math.floor((min - Y_PADDING_C) / step) * step,
+      Math.ceil((max + Y_PADDING_C) / step) * step,
+    ];
   }, [rows, series]);
 
   if (!hasSelection) return <EmptyState icon={<LineChartIcon />} title={t.noSelection} />;
@@ -90,6 +95,10 @@ export function TemperatureChart({
 
   const { equipment } = series;
   const xDomain: [number, number] = [rows[0]!.t, rows[rows.length - 1]!.t];
+  const yTicks = Array.from(
+    { length: (yDomain[1] - yDomain[0]) / Y_TICK_STEP_C + 1 },
+    (_, index) => yDomain[0] + index * Y_TICK_STEP_C,
+  );
 
   return (
     <figure className={styles.figure}>
@@ -133,6 +142,8 @@ export function TemperatureChart({
             />
             <YAxis
               domain={yDomain}
+              ticks={yTicks}
+              interval="preserveStartEnd"
               stroke={theme.axis}
               tick={{ fill: theme.axis, fontSize: 12 }}
               tickLine={false}

@@ -38,7 +38,7 @@ export const ptBR = {
     monitored: 'Equipamentos monitorados',
     monitoredHint: 'Controladores + sensores independentes',
     normal: 'Em operação normal',
-    normalHint: '{warning} em atenção · {critical} críticos',
+    normalHint: 'Atenção: {warning} · Críticos: {critical}',
     activeAlerts: 'Alertas ativos',
     activeAlertsHint: 'Incidentes abertos nesta loja',
     noAlertsHint: 'Nenhum incidente aberto',

@@ -39,7 +39,7 @@ export const en: Messages = {
     monitored: 'Monitored equipment',
     monitoredHint: 'Controllers + independent sensors',
     normal: 'Operating normally',
-    normalHint: '{warning} warning · {critical} critical',
+    normalHint: 'Warning: {warning} · Critical: {critical}',
     activeAlerts: 'Active alerts',
     activeAlertsHint: 'Open incidents in this store',
     noAlertsHint: 'No open incidents',

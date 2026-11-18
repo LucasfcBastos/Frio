@@ -37,8 +37,12 @@ export function DashboardPage() {
   const [openIncidentId, setOpenIncidentId] = useState<number | null>(null);
   const incidentDetail = useIncidentDetail(openIncidentId);
 
+  // The banner shows the first critical signal of the ongoing attack.
   const criticalIncident = useMemo(
-    () => incidents.data?.find((incident) => incident.severity === 'critical'),
+    () =>
+      incidents.data
+        ?.filter((incident) => incident.severity === 'critical')
+        .sort((a, b) => a.started_at.localeCompare(b.started_at))[0],
     [incidents.data],
   );
   const selectedName = equipment.data?.find((item) => item.id === selectedId)?.name;

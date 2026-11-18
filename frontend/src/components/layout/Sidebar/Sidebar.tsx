@@ -67,12 +67,12 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                   }
                 >
                   <Icon className={styles.icon} aria-hidden="true" />
-                  {messages.nav[key]}
+                  <span className={styles.label}>{messages.nav[key]}</span>
                 </NavLink>
               ) : (
                 <span className={[styles.item, styles.disabled].join(' ')} aria-disabled="true">
                   <Icon className={styles.icon} aria-hidden="true" />
-                  {messages.nav[key]}
+                  <span className={styles.label}>{messages.nav[key]}</span>
                   <Badge size="sm" className={styles.soon}>
                     {messages.nav.comingSoon}
                   </Badge>
