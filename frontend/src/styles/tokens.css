@@ -1,0 +1,125 @@
+/*
+ * FrioGuard design tokens. Every color, spacing, radius, shadow and type size
+ * used by the UI comes from here; components never hard-code values.
+ * Dark theme, cold palette (ice / cyan). Red only for critical, amber for warning.
+ * Text/background pairs below were checked for WCAG AA (≥ 4.5:1).
+ */
+:root {
+  color-scheme: dark;
+
+  /* Neutrals */
+  --color-bg: #0b1220;
+  --color-surface: #111a2b;
+  --color-surface-raised: #17233a;
+  --color-surface-hover: #1c2a45;
+  --color-border: #24344f;
+  --color-border-strong: #33496b;
+  --color-text: #e6f1ff;
+  --color-text-muted: #94a8c4;
+  --color-text-subtle: #7489a8;
+  --color-overlay: rgb(3 7 15 / 72%);
+
+  /* Brand */
+  --color-primary: #5ce1e6;
+  --color-primary-strong: #22d3ee;
+  --color-primary-soft: rgb(92 225 230 / 12%);
+  --color-ice: #a5f3fc;
+  --color-on-primary: #04222a;
+
+  /* Status */
+  --color-success: #34d399;
+  --color-success-soft: rgb(52 211 153 / 12%);
+  --color-warning: #fbbf24;
+  --color-warning-soft: rgb(251 191 36 / 12%);
+  --color-critical: #f87171;
+  --color-critical-soft: rgb(248 113 113 / 12%);
+  --color-critical-border: rgb(248 113 113 / 45%);
+  --color-critical-banner: #8f1d1d;
+  --color-on-critical: #fff5f5;
+
+  /* Chart */
+  --chart-controller: #7dd3fc;
+  --chart-sensor: #f8fafc;
+  --chart-setpoint: #94a8c4;
+  --chart-safe-band: #34d399;
+  --chart-incident: #f87171;
+  --chart-grid: #24344f;
+  --chart-axis: #7489a8;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --text-2xs: 0.6875rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.125rem;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --tracking-wide: 0.06em;
+
+  /* Spacing (4px scale) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 999px;
+
+  /* Borders & shadows */
+  --border-width: 1px;
+  --focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-primary);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 35%);
+  --shadow-lg: 0 16px 48px rgb(0 0 0 / 50%);
+  --shadow-critical-glow: 0 0 0 1px var(--color-critical-border), 0 0 24px rgb(248 113 113 / 18%);
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --header-height: 64px;
+  --drawer-width: 440px;
+  --content-max-width: 1600px;
+  --gutter: var(--space-6);
+  --chart-height: 320px;
+  --sparkline-height: 36px;
+  --icon-sm: 14px;
+  --icon-md: 18px;
+  --icon-lg: 22px;
+  --avatar-size: 36px;
+  --dot-size: 8px;
+
+  /* Layers */
+  --z-sidebar: 30;
+  --z-header: 20;
+  --z-overlay: 40;
+  --z-drawer: 50;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: var(--space-4);
+    --chart-height: 260px;
+  }
+}
