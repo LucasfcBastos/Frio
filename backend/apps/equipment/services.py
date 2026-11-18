@@ -2,7 +2,7 @@
 
 import math
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 
 from apps.stores.services import ensure_store_exists
 from core.entities import EquipmentEntity, IncidentEntity, ReadingEntity
@@ -150,13 +150,15 @@ class EquipmentService:
         )
 
     # -- Time series --------------------------------------------------------------
-    def get_readings(self, equipment_id: int, hours: int, now: datetime) -> ReadingSeries:
+    def get_readings(
+        self, equipment_id: int, hours: int, now: datetime | None = None
+    ) -> ReadingSeries:
         item = self._equipment.get(equipment_id)
         if item is None:
             raise NotFoundError(
                 f"Equipment {equipment_id} not found.", details={"equipment_id": equipment_id}
             )
-        since = now - timedelta(hours=hours)
+        since = (now or datetime.now(UTC)) - timedelta(hours=hours)
         points = _downsample(_merge_sources(self._readings.series(equipment_id, since)))
         markers = [
             _to_marker(incident)

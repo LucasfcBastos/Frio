@@ -135,6 +135,13 @@ SPECTACULAR_SETTINGS = {
     ),
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
+    "ENUM_NAME_OVERRIDES": {
+        "EquipmentStatusEnum": ["normal", "warning", "critical"],
+        "IncidentStatusEnum": ["active", "acknowledged", "resolved"],
+        "SeverityEnum": ["low", "medium", "high", "critical"],
+        "OperatingModeEnum": ["cooling", "defrost", "idle"],
+        "EquipmentTypeEnum": ["freezer", "cold_room", "chiller"],
+    },
 }
 
 CORS_ALLOWED_ORIGINS = env_list(
