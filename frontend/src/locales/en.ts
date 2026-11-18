@@ -1,0 +1,142 @@
+import type { Messages } from './pt-BR';
+
+export const en: Messages = {
+  app: { name: 'FrioGuard', tagline: 'Security for connected refrigeration' },
+  nav: {
+    label: 'Main navigation',
+    dashboard: 'Dashboard',
+    equipment: 'Equipment',
+    incidents: 'Incidents',
+    vulnerabilities: 'Vulnerabilities',
+    settings: 'Settings',
+    comingSoon: 'Soon',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+  },
+  header: {
+    store: 'Store',
+    storeLoading: 'Loading stores…',
+    language: 'Language',
+    updatedAgo: 'Updated {time}',
+    waitingData: 'Waiting for data',
+    live: 'Live',
+    user: { name: 'Ana Souza', role: 'Security analyst' },
+    overall: {
+      normal: 'All systems normal',
+      warning: 'Attention required',
+      critical: 'Critical incident in progress',
+    },
+  },
+  dashboard: {
+    title: 'Monitoring Dashboard',
+    subtitle: '{store} · {city}/{state}',
+    equipmentSection: 'Equipment',
+    equipmentHint: 'Select an equipment to see its history',
+    chartSection: 'Temperature · last {hours}h',
+    incidentSection: 'Active incidents',
+  },
+  kpi: {
+    monitored: 'Monitored equipment',
+    monitoredHint: 'Controllers + independent sensors',
+    normal: 'Operating normally',
+    normalHint: '{warning} warning · {critical} critical',
+    activeAlerts: 'Active alerts',
+    activeAlertsHint: 'Open incidents in this store',
+    noAlertsHint: 'No open incidents',
+    detectionTime: 'Mean time to detect',
+    detectionTimeHint: 'vs. 3h30 in the Sweden attack',
+    firmware: 'Vulnerable firmware',
+    firmwareHint: 'of {total} controllers outdated',
+    noData: '—',
+  },
+  banner: {
+    label: 'Critical incident',
+    meta: '{equipment} · started {time}',
+    details: 'View details',
+  },
+  equipment: {
+    type: { freezer: 'Freezer', cold_room: 'Cold room', chiller: 'Chiller' },
+    mode: { cooling: 'Cooling', defrost: 'Defrost', idle: 'Idle' },
+    controller: 'Controller',
+    sensor: 'Independent sensor',
+    setpoint: 'Setpoint',
+    modeLabel: 'Mode',
+    diverging: '{value} divergence',
+    firmwareOutdated: 'Firmware {version} outdated',
+    selected: 'Selected',
+    sparklineLabel: 'Independent sensor trend',
+    empty: 'No equipment registered in this store.',
+  },
+  status: { normal: 'Normal', warning: 'Warning', critical: 'Critical' },
+  severity: { low: 'Low', medium: 'Medium', high: 'High', critical: 'Critical' },
+  chart: {
+    controller: 'Controller',
+    sensor: 'Independent sensor',
+    setpoint: 'Setpoint',
+    safeRange: 'Safe range',
+    incidentStart: 'Incident start',
+    empty: 'No readings in this period.',
+    noSelection: 'Select an equipment.',
+    ariaLabel: 'Temperature chart for {name}',
+  },
+  incidents: {
+    empty: 'No active incidents. All under control.',
+    rule: 'Rule',
+    detectedIn: 'detected in {time}',
+  },
+  rules: {
+    UNSCHEDULED_DEFROST: {
+      title: 'Defrost outside the programmed window',
+      description:
+        '{equipment} entered defrost at {started_local}, outside the programmed windows ({schedule}). The compressor is off while the controller keeps reporting normal temperatures.',
+    },
+    SENSOR_DIVERGENCE: {
+      title: 'Controller and independent sensor diverge',
+      description:
+        'Controller reports {controller_c}°C while the independent sensor measures {sensor_c}°C ({divergence_c}°C apart; limit {threshold_c}°C). Controller telemetry may be spoofed.',
+    },
+    OUT_OF_SAFE_RANGE: {
+      title: 'Temperature outside safe range',
+      description:
+        'Reading of {temperature_c}°C; the safe range for {equipment} is {safe_min_c}°C to {safe_max_c}°C.',
+    },
+    SETPOINT_TAMPERING: {
+      title: 'Setpoint tampering',
+      description:
+        'The setpoint of {equipment} was changed from {old_value}°C to {new_value}°C from IP {origin_ip}.',
+    },
+  },
+  drawer: {
+    close: 'Close panel',
+    description: 'Description',
+    timeline: 'Timeline',
+    detectionTime: 'Time to detect',
+    origin: 'Origin',
+    startedAt: 'Started',
+    detectedAt: 'Detected',
+    timelineKinds: {
+      config_change: 'Configuration changed',
+      condition_started: 'Condition started',
+      incident_detected: 'Incident detected',
+    },
+    configChange: '{field}: {old} → {new}',
+    fromIp: 'Source IP {ip}',
+    detectedAfter: '{title} · in {time}',
+    fields: {
+      remote_access: 'Remote access',
+      high_temp_alarm_c: 'High temperature alarm (°C)',
+      setpoint_c: 'Setpoint (°C)',
+      defrost_mode: 'Defrost mode',
+    },
+  },
+  states: {
+    error: 'Could not load data.',
+    retry: 'Try again',
+    loading: 'Loading…',
+  },
+  notFound: {
+    title: 'Page not found',
+    description: 'The address you visited does not exist.',
+    back: 'Back to dashboard',
+  },
+};
