@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="FrioGuard">
+  <path d="M16 2 4 6.5v8.2c0 7.4 5.1 13.3 12 15.3 6.9-2 12-7.9 12-15.3V6.5L16 2Z" fill="#0E2A3B" stroke="#5CE1E6" stroke-width="1.6" stroke-linejoin="round"/>
+  <g stroke="#A5F3FC" stroke-width="1.6" stroke-linecap="round">
+    <path d="M16 9v13"/>
+    <path d="m10.4 12.25 11.2 6.5"/>
+    <path d="m21.6 12.25-11.2 6.5"/>
+    <path d="m13.8 9.9 2.2 1.6 2.2-1.6"/>
+    <path d="m13.8 21.1 2.2-1.6 2.2 1.6"/>
+  </g>
+</svg>
