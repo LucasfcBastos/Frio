@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.select {
+  appearance: none;
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-8);
+  background: var(--color-surface-raised);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.select:hover {
+  border-color: var(--color-border-strong);
+}
+
+.select option {
+  background: var(--color-surface);
+}
+
+.leading,
+.trailing {
+  position: absolute;
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.leading {
+  left: var(--space-3);
+}
+
+.trailing {
+  right: var(--space-3);
+}
