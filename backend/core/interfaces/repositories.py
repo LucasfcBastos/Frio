@@ -5,6 +5,8 @@ abstractions; the Django implementations live in ``apps/*/repositories.py`` and
 are wired together in ``core/container.py``.
 """
 
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from collections.abc import Iterable, Sequence
 from datetime import datetime

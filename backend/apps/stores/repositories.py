@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from apps.stores.models import Organization, Store
 from core.entities import StoreEntity
 from core.interfaces import StoreRepository

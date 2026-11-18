@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from apps.equipment.models import Equipment
 from core.entities import EquipmentEntity
 from core.enums import EquipmentStatus, EquipmentType

@@ -130,7 +130,9 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     "TITLE": "FrioGuard API",
-    "DESCRIPTION": "Security monitoring for connected refrigeration (cold rooms, freezers, chillers).",
+    "DESCRIPTION": (
+        "Security monitoring for connected refrigeration (cold rooms, freezers, chillers)."
+    ),
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
 }
@@ -143,9 +145,7 @@ CORS_ALLOWED_ORIGINS = env_list(
 DETECTION = {
     "DIVERGENCE_THRESHOLD_C": float(env("DETECTION_DIVERGENCE_THRESHOLD_C", "4.0")),
     "SETPOINT_CHANGE_LIMIT_C": float(env("DETECTION_SETPOINT_CHANGE_LIMIT_C", "5.0")),
-    "DEFROST_WINDOWS": env_list(
-        "DETECTION_DEFROST_WINDOWS", "06:00-06:30,14:00-14:30,22:00-22:30"
-    ),
+    "DEFROST_WINDOWS": env_list("DETECTION_DEFROST_WINDOWS", "06:00-06:30,14:00-14:30,22:00-22:30"),
     "WARNING_MARGIN_C": 1.0,
     "CONTEXT_READINGS": 15,
     "CONFIG_EVENT_LOOKBACK_MINUTES": 10,

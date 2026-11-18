@@ -1,6 +1,6 @@
 """Uniform error envelope for every API response.
 
-    {"error": {"code": "not_found", "message": "...", "details": {...}}}
+{"error": {"code": "not_found", "message": "...", "details": {...}}}
 """
 
 from rest_framework import status
