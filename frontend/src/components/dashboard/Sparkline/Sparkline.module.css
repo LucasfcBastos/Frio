@@ -1,0 +1,22 @@
+.sparkline,
+.placeholder {
+  width: 100%;
+  height: var(--sparkline-height);
+}
+
+.info,
+.neutral {
+  color: var(--color-primary);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.critical {
+  color: var(--color-critical);
+}
