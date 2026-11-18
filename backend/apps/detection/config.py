@@ -50,7 +50,7 @@ class DetectionConfig:
     defrost_schedule: DefrostSchedule
     divergence_threshold_c: float = 4.0
     setpoint_change_limit_c: float = 5.0
-    warning_margin_c: float = 1.0
+    warning_margin_c: float = 0.75
     context_readings: int = 15
     config_event_lookback: timedelta = field(default=timedelta(minutes=10))
 
