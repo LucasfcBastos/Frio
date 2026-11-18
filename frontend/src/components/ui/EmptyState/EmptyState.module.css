@@ -1,0 +1,29 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  height: 100%;
+}
+
+.icon {
+  color: var(--color-primary);
+}
+
+.icon svg {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+
+.title {
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+.description {
+  font-size: var(--text-xs);
+}
